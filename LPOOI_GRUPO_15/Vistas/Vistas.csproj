@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9DAF551A-7DE3-4265-A0D7-F2D2BD51021C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Vistas</RootNamespace>
+    <AssemblyName>Vistas</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="comdepDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>comdepDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="comdepDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>comdepDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Form_AltaCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AltaCategorias.Designer.cs">
+      <DependentUpon>Form_AltaCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_AltaCompetencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AltaCompetencias.Designer.cs">
+      <DependentUpon>Form_AltaCompetencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_AltaDisciplinas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AltaDisciplinas.Designer.cs">
+      <DependentUpon>Form_AltaDisciplinas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_AltaEventos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AltaEventos.Designer.cs">
+      <DependentUpon>Form_AltaEventos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_AltaParticipantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AltaParticipantes.Designer.cs">
+      <DependentUpon>Form_AltaParticipantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Principal.Designer.cs">
+      <DependentUpon>Form_Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Sistema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Sistema.Designer.cs">
+      <DependentUpon>Form_Sistema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form_AltaCategorias.resx">
+      <DependentUpon>Form_AltaCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_AltaCompetencias.resx">
+      <DependentUpon>Form_AltaCompetencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_AltaDisciplinas.resx">
+      <DependentUpon>Form_AltaDisciplinas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_AltaEventos.resx">
+      <DependentUpon>Form_AltaEventos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_AltaParticipantes.resx">
+      <DependentUpon>Form_AltaParticipantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Principal.resx">
+      <DependentUpon>Form_Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Sistema.resx">
+      <DependentUpon>Form_Sistema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="comdepDataSet.xsc">
+      <DependentUpon>comdepDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="comdepDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>comdepDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="comdepDataSet.xss">
+      <DependentUpon>comdepDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="comdepDataSet1.xsc">
+      <DependentUpon>comdepDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="comdepDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>comdepDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="comdepDataSet1.xss">
+      <DependentUpon>comdepDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClasesBase\ClasesBase.csproj">
+      <Project>{375540A6-7536-4FDB-9F56-9EA9337B1ABE}</Project>
+      <Name>ClasesBase</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-administration-17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adminstracion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\administracion24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\administracion128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\administracion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\competicion_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\persona.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eventos32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\categorias32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closeRedondo32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closeCuadrado32.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
