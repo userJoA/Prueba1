@@ -34,6 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -55,6 +57,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>comdepDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="comdepDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>comdepDataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="Form_AltaCategorias.cs">
       <SubType>Form</SubType>
@@ -98,6 +105,12 @@
     <Compile Include="Form_Sistema.Designer.cs">
       <DependentUpon>Form_Sistema.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Usuarios.Designer.cs">
+      <DependentUpon>Form_Usuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +119,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsersDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsersDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form_AltaCategorias.resx">
       <DependentUpon>Form_AltaCategorias.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Sistema.resx">
       <DependentUpon>Form_Sistema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Usuarios.resx">
+      <DependentUpon>Form_Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -163,6 +184,17 @@
     <None Include="comdepDataSet1.xss">
       <DependentUpon>comdepDataSet1.xsd</DependentUpon>
     </None>
+    <None Include="comdepDataSet2.xsc">
+      <DependentUpon>comdepDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="comdepDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>comdepDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="comdepDataSet2.xss">
+      <DependentUpon>comdepDataSet2.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -172,6 +204,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="UsersDataSet.xsc">
+      <DependentUpon>UsersDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="UsersDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UsersDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UsersDataSet.xss">
+      <DependentUpon>UsersDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ClasesBase\ClasesBase.csproj">

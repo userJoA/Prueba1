@@ -11,106 +11,13 @@ namespace Vistas
 {
     public partial class Form_Principal : Form
     {
-        /*Form_AltaCompetencias formAltaCompetencias;
-        Form_AltaParticipantes formAltaParticipaciones;
-        Form_AltaEventos formAltaEventos;
-        Form_AltaCategorias formAltaCategorias;
-        Form_AltaDisciplinas formAltaDisciplinas;*/
         public Form_Principal()
         {
             InitializeComponent();
             IsMdiContainer = true;
         }
-        /*
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
-        private void btnAltaCompetencias_Click(object sender, EventArgs e)
-        {
-            if (formAltaCompetencias == null)
-            {
-                formAltaCompetencias = new Form_AltaCompetencias();
-                formAltaCompetencias.MdiParent = this;
-                formAltaCompetencias.FormClosed += new FormClosedEventHandler(altasComp_FormClosed);
-                formAltaCompetencias.Show();
-            }
-            else { formAltaCompetencias.Activate(); }
-        }
-
-        void altasComp_FormClosed(object sender, EventArgs e)
-        {
-            formAltaCompetencias = null;
-        }
-
-
-        private void btnAltaPartipantes_Click(object sender, EventArgs e)
-        {
-            if (formAltaParticipaciones == null)
-            {
-                formAltaParticipaciones = new Form_AltaParticipantes();
-                formAltaParticipaciones.MdiParent = this;
-                formAltaParticipaciones.FormClosed += new FormClosedEventHandler(altasPart_FormClosed);
-                formAltaParticipaciones.Show();
-            }
-            else { formAltaParticipaciones.Activate(); }
-        }
-
-        void altasPart_FormClosed(object sender, EventArgs e)
-        {
-            formAltaParticipaciones = null;
-        }
-
-        private void btnAltaEventos_Click(object sender, EventArgs e)
-        {
-            if (formAltaEventos == null)
-            {
-                formAltaEventos = new Form_AltaEventos();
-                formAltaEventos.MdiParent = this;
-                formAltaEventos.FormClosed += new FormClosedEventHandler(altasEvent_FormClosed);
-                formAltaEventos.Show();
-            }
-            else { formAltaEventos.Activate(); }
-        }
-
-        void altasEvent_FormClosed(object sender, EventArgs e)
-        {
-            formAltaEventos = null;
-        }
-
-        private void btnAltaCategorias_Click(object sender, EventArgs e)
-        {
-            if (formAltaCategorias == null) {
-                formAltaCategorias = new Form_AltaCategorias();
-                formAltaCategorias.MdiParent = this;
-                formAltaCategorias.FormClosed += new FormClosedEventHandler(altasCat_FormClosed);
-                formAltaCategorias.Show();
-            }
-            else { formAltaCategorias.Activate(); }
-        }
-
-        void altasCat_FormClosed(object sender, EventArgs e)
-        {
-            formAltaCategorias = null;
-        }
-
-        private void btnAltaDisciplina_Click(object sender, EventArgs e)
-        {
-            if(formAltaDisciplinas==null){
-                formAltaDisciplinas = new Form_AltaDisciplinas();
-                formAltaDisciplinas.MdiParent = this;
-                formAltaDisciplinas.FormClosed += new FormClosedEventHandler(altasDisc_FormClosed);
-                formAltaDisciplinas.Show(); 
-            }
-            else{}
-        }
-
-        void altasDisc_FormClosed(object sender, EventArgs e)
-        {
-            formAltaDisciplinas = null;
-        }
-        */
+        
         public void cargarFormulario(object Form) 
         {
             if (this.pnlPrincipal.Controls.Count > 0)
@@ -123,37 +30,81 @@ namespace Vistas
             f.Show();
         }
 
-        private void btnParticipantes_Click(object sender, EventArgs e)
+        
+        private void ocultarSubmenu() 
         {
-            cargarFormulario(new Form_AltaParticipantes());
+            if (pnlSubmenuAdministracion.Visible == true) 
+            {
+                pnlSubmenuAdministracion.Visible = false;
+            }
+
+            if(pnlSubmenuSistema.Visible==true)
+            {
+                pnlSubmenuSistema.Visible = false;
+            }
         }
 
-        private void btnCompetencias_Click(object sender, EventArgs e)
+        private void mostrarSubmenu(Panel submenu) 
         {
-            cargarFormulario(new Form_AltaCompetencias());
+            if (submenu.Visible == false)
+            {
+                ocultarSubmenu();
+                submenu.Visible = true;
+            }
+            else 
+            {
+                submenu.Visible = false;
+            }
         }
 
-        private void btnEventos_Click(object sender, EventArgs e)
+
+
+        private void btnMenuSistema_Click(object sender, EventArgs e)
+        {
+            mostrarSubmenu(pnlSubmenuSistema);
+        }
+
+        private void btnMenuAdminstracion_Click(object sender, EventArgs e)
+        {
+            mostrarSubmenu(pnlSubmenuAdministracion);
+        }
+
+        private void btnSubmenuSistemaUsuario_Click(object sender, EventArgs e)
+        {
+            cargarFormulario(new Form_Usuarios());
+            ocultarSubmenu();
+        }
+
+        private void btnSubmenuEventos_Click(object sender, EventArgs e)
         {
             cargarFormulario(new Form_AltaEventos());
+            ocultarSubmenu();
         }
 
-        private void btnCategorias_Click(object sender, EventArgs e)
-        {
-            cargarFormulario(new Form_AltaCategorias());
-        }
-
-        private void btnDisciplinas_Click(object sender, EventArgs e)
+        private void btnSubmenuDisciplinas_Click(object sender, EventArgs e)
         {
             cargarFormulario(new Form_AltaDisciplinas());
+            ocultarSubmenu();
         }
 
-        private void btnSistema_Click(object sender, EventArgs e)
+        private void btnSubmenuCategorias_Click(object sender, EventArgs e)
         {
-            cargarFormulario(new Form_Sistema());
+            cargarFormulario(new Form_AltaCategorias());
+            ocultarSubmenu();
         }
 
+        private void btnMenuCompetencias_Click(object sender, EventArgs e)
+        {
+            cargarFormulario(new Form_AltaCompetencias());
+            ocultarSubmenu();
+        }
 
+        private void btnMenuParticipantes_Click(object sender, EventArgs e)
+        {
+            cargarFormulario(new Form_AltaParticipantes());
+            ocultarSubmenu();
+        }
+    
 
     }
 }

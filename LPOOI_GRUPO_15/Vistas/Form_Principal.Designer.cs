@@ -30,179 +30,192 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnDisciplinas = new System.Windows.Forms.Button();
-            this.btnCategorias = new System.Windows.Forms.Button();
-            this.btnEventos = new System.Windows.Forms.Button();
-            this.btnCompetencias = new System.Windows.Forms.Button();
-            this.btnParticipantes = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnSistema = new System.Windows.Forms.Button();
+            this.btnMenuParticipantes = new System.Windows.Forms.Button();
+            this.btnMenuCompetencias = new System.Windows.Forms.Button();
+            this.pnlSubmenuAdministracion = new System.Windows.Forms.Panel();
+            this.btnSubmenuCategorias = new System.Windows.Forms.Button();
+            this.btnSubmenuDisciplinas = new System.Windows.Forms.Button();
+            this.btnSubmenuEventos = new System.Windows.Forms.Button();
+            this.btnMenuAdminstracion = new System.Windows.Forms.Button();
+            this.pnlSubmenuSistema = new System.Windows.Forms.Panel();
+            this.btnSubmenuSistemaUsuario = new System.Windows.Forms.Button();
+            this.btnMenuSistema = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pnlPrincipal = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlSubmenuAdministracion.SuspendLayout();
+            this.pnlSubmenuSistema.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkGray;
-            this.panel2.Controls.Add(this.btnDisciplinas);
-            this.panel2.Controls.Add(this.btnCategorias);
-            this.panel2.Controls.Add(this.btnEventos);
-            this.panel2.Controls.Add(this.btnCompetencias);
-            this.panel2.Controls.Add(this.btnParticipantes);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.btnSistema);
+            this.panel2.Controls.Add(this.btnMenuParticipantes);
+            this.panel2.Controls.Add(this.btnMenuCompetencias);
+            this.panel2.Controls.Add(this.pnlSubmenuAdministracion);
+            this.panel2.Controls.Add(this.btnMenuAdminstracion);
+            this.panel2.Controls.Add(this.pnlSubmenuSistema);
+            this.panel2.Controls.Add(this.btnMenuSistema);
+            this.panel2.Controls.Add(this.panel1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.ForeColor = System.Drawing.Color.White;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(254, 652);
+            this.panel2.Size = new System.Drawing.Size(255, 652);
             this.panel2.TabIndex = 1;
             // 
-            // btnDisciplinas
+            // btnMenuParticipantes
             // 
-            this.btnDisciplinas.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnDisciplinas.BackColor = System.Drawing.Color.DarkGray;
-            this.btnDisciplinas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnDisciplinas.FlatAppearance.BorderSize = 0;
-            this.btnDisciplinas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDisciplinas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDisciplinas.ForeColor = System.Drawing.Color.White;
-            this.btnDisciplinas.Image = global::Vistas.Properties.Resources.categorias32;
-            this.btnDisciplinas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDisciplinas.Location = new System.Drawing.Point(1, 375);
-            this.btnDisciplinas.Margin = new System.Windows.Forms.Padding(0);
-            this.btnDisciplinas.Name = "btnDisciplinas";
-            this.btnDisciplinas.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.btnDisciplinas.Size = new System.Drawing.Size(254, 50);
-            this.btnDisciplinas.TabIndex = 9;
-            this.btnDisciplinas.Text = "Disciplinas";
-            this.btnDisciplinas.UseVisualStyleBackColor = false;
-            this.btnDisciplinas.Click += new System.EventHandler(this.btnDisciplinas_Click);
+            this.btnMenuParticipantes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMenuParticipantes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuParticipantes.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnMenuParticipantes.Location = new System.Drawing.Point(0, 463);
+            this.btnMenuParticipantes.Name = "btnMenuParticipantes";
+            this.btnMenuParticipantes.Size = new System.Drawing.Size(255, 40);
+            this.btnMenuParticipantes.TabIndex = 6;
+            this.btnMenuParticipantes.Text = "Participantes";
+            this.btnMenuParticipantes.UseVisualStyleBackColor = true;
+            this.btnMenuParticipantes.Click += new System.EventHandler(this.btnMenuParticipantes_Click);
             // 
-            // btnCategorias
+            // btnMenuCompetencias
             // 
-            this.btnCategorias.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCategorias.BackColor = System.Drawing.Color.DarkGray;
-            this.btnCategorias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCategorias.FlatAppearance.BorderSize = 0;
-            this.btnCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCategorias.ForeColor = System.Drawing.Color.White;
-            this.btnCategorias.Image = global::Vistas.Properties.Resources.categorias32;
-            this.btnCategorias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCategorias.Location = new System.Drawing.Point(0, 325);
-            this.btnCategorias.Margin = new System.Windows.Forms.Padding(0);
-            this.btnCategorias.Name = "btnCategorias";
-            this.btnCategorias.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.btnCategorias.Size = new System.Drawing.Size(254, 50);
-            this.btnCategorias.TabIndex = 8;
-            this.btnCategorias.Text = "Categorias";
-            this.btnCategorias.UseVisualStyleBackColor = false;
-            this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
+            this.btnMenuCompetencias.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMenuCompetencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuCompetencias.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnMenuCompetencias.Location = new System.Drawing.Point(0, 423);
+            this.btnMenuCompetencias.Name = "btnMenuCompetencias";
+            this.btnMenuCompetencias.Size = new System.Drawing.Size(255, 40);
+            this.btnMenuCompetencias.TabIndex = 5;
+            this.btnMenuCompetencias.Text = "Competencias";
+            this.btnMenuCompetencias.UseVisualStyleBackColor = true;
+            this.btnMenuCompetencias.Click += new System.EventHandler(this.btnMenuCompetencias_Click);
             // 
-            // btnEventos
+            // pnlSubmenuAdministracion
             // 
-            this.btnEventos.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnEventos.BackColor = System.Drawing.Color.DarkGray;
-            this.btnEventos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnEventos.FlatAppearance.BorderSize = 0;
-            this.btnEventos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEventos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEventos.ForeColor = System.Drawing.Color.White;
-            this.btnEventos.Image = global::Vistas.Properties.Resources.eventos32;
-            this.btnEventos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEventos.Location = new System.Drawing.Point(0, 475);
-            this.btnEventos.Margin = new System.Windows.Forms.Padding(0);
-            this.btnEventos.Name = "btnEventos";
-            this.btnEventos.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.btnEventos.Size = new System.Drawing.Size(254, 50);
-            this.btnEventos.TabIndex = 7;
-            this.btnEventos.Text = "Eventos";
-            this.btnEventos.UseVisualStyleBackColor = false;
-            this.btnEventos.Click += new System.EventHandler(this.btnEventos_Click);
+            this.pnlSubmenuAdministracion.Controls.Add(this.btnSubmenuCategorias);
+            this.pnlSubmenuAdministracion.Controls.Add(this.btnSubmenuDisciplinas);
+            this.pnlSubmenuAdministracion.Controls.Add(this.btnSubmenuEventos);
+            this.pnlSubmenuAdministracion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSubmenuAdministracion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pnlSubmenuAdministracion.Location = new System.Drawing.Point(0, 291);
+            this.pnlSubmenuAdministracion.Name = "pnlSubmenuAdministracion";
+            this.pnlSubmenuAdministracion.Size = new System.Drawing.Size(255, 132);
+            this.pnlSubmenuAdministracion.TabIndex = 4;
+            this.pnlSubmenuAdministracion.Visible = false;
             // 
-            // btnCompetencias
+            // btnSubmenuCategorias
             // 
-            this.btnCompetencias.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCompetencias.BackColor = System.Drawing.Color.DarkGray;
-            this.btnCompetencias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnCompetencias.FlatAppearance.BorderSize = 0;
-            this.btnCompetencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCompetencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCompetencias.ForeColor = System.Drawing.Color.White;
-            this.btnCompetencias.Image = global::Vistas.Properties.Resources.competicion_32;
-            this.btnCompetencias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCompetencias.Location = new System.Drawing.Point(1, 425);
-            this.btnCompetencias.Margin = new System.Windows.Forms.Padding(0);
-            this.btnCompetencias.Name = "btnCompetencias";
-            this.btnCompetencias.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.btnCompetencias.Size = new System.Drawing.Size(254, 50);
-            this.btnCompetencias.TabIndex = 6;
-            this.btnCompetencias.Text = "Competencias";
-            this.btnCompetencias.UseVisualStyleBackColor = false;
-            this.btnCompetencias.Click += new System.EventHandler(this.btnCompetencias_Click);
+            this.btnSubmenuCategorias.BackColor = System.Drawing.Color.White;
+            this.btnSubmenuCategorias.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSubmenuCategorias.FlatAppearance.BorderSize = 0;
+            this.btnSubmenuCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmenuCategorias.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnSubmenuCategorias.Location = new System.Drawing.Point(0, 80);
+            this.btnSubmenuCategorias.Name = "btnSubmenuCategorias";
+            this.btnSubmenuCategorias.Size = new System.Drawing.Size(255, 40);
+            this.btnSubmenuCategorias.TabIndex = 2;
+            this.btnSubmenuCategorias.Text = "Categorias";
+            this.btnSubmenuCategorias.UseVisualStyleBackColor = false;
+            this.btnSubmenuCategorias.Click += new System.EventHandler(this.btnSubmenuCategorias_Click);
             // 
-            // btnParticipantes
+            // btnSubmenuDisciplinas
             // 
-            this.btnParticipantes.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnParticipantes.BackColor = System.Drawing.Color.DarkGray;
-            this.btnParticipantes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnParticipantes.FlatAppearance.BorderSize = 0;
-            this.btnParticipantes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnParticipantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnParticipantes.ForeColor = System.Drawing.Color.White;
-            this.btnParticipantes.Image = global::Vistas.Properties.Resources.persona;
-            this.btnParticipantes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnParticipantes.Location = new System.Drawing.Point(0, 275);
-            this.btnParticipantes.Margin = new System.Windows.Forms.Padding(0);
-            this.btnParticipantes.Name = "btnParticipantes";
-            this.btnParticipantes.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.btnParticipantes.Size = new System.Drawing.Size(254, 50);
-            this.btnParticipantes.TabIndex = 5;
-            this.btnParticipantes.Text = "Participantes";
-            this.btnParticipantes.UseVisualStyleBackColor = false;
-            this.btnParticipantes.Click += new System.EventHandler(this.btnParticipantes_Click);
+            this.btnSubmenuDisciplinas.BackColor = System.Drawing.Color.White;
+            this.btnSubmenuDisciplinas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSubmenuDisciplinas.FlatAppearance.BorderSize = 0;
+            this.btnSubmenuDisciplinas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmenuDisciplinas.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnSubmenuDisciplinas.Location = new System.Drawing.Point(0, 40);
+            this.btnSubmenuDisciplinas.Name = "btnSubmenuDisciplinas";
+            this.btnSubmenuDisciplinas.Size = new System.Drawing.Size(255, 40);
+            this.btnSubmenuDisciplinas.TabIndex = 1;
+            this.btnSubmenuDisciplinas.Text = "Disciplinas";
+            this.btnSubmenuDisciplinas.UseVisualStyleBackColor = false;
+            this.btnSubmenuDisciplinas.Click += new System.EventHandler(this.btnSubmenuDisciplinas_Click);
             // 
-            // pictureBox1
+            // btnSubmenuEventos
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.DarkGray;
-            this.pictureBox1.Image = global::Vistas.Properties.Resources.administracion128;
-            this.pictureBox1.Location = new System.Drawing.Point(1, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(250, 164);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.btnSubmenuEventos.BackColor = System.Drawing.Color.White;
+            this.btnSubmenuEventos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSubmenuEventos.FlatAppearance.BorderSize = 0;
+            this.btnSubmenuEventos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmenuEventos.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnSubmenuEventos.Location = new System.Drawing.Point(0, 0);
+            this.btnSubmenuEventos.Name = "btnSubmenuEventos";
+            this.btnSubmenuEventos.Size = new System.Drawing.Size(255, 40);
+            this.btnSubmenuEventos.TabIndex = 0;
+            this.btnSubmenuEventos.Text = "Eventos";
+            this.btnSubmenuEventos.UseVisualStyleBackColor = false;
+            this.btnSubmenuEventos.Click += new System.EventHandler(this.btnSubmenuEventos_Click);
             // 
-            // btnSistema
+            // btnMenuAdminstracion
             // 
-            this.btnSistema.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnSistema.BackColor = System.Drawing.Color.DarkGray;
-            this.btnSistema.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSistema.FlatAppearance.BorderSize = 0;
-            this.btnSistema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSistema.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSistema.ForeColor = System.Drawing.Color.White;
-            this.btnSistema.Image = global::Vistas.Properties.Resources.setting32;
-            this.btnSistema.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSistema.Location = new System.Drawing.Point(0, 216);
-            this.btnSistema.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSistema.Name = "btnSistema";
-            this.btnSistema.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.btnSistema.Size = new System.Drawing.Size(254, 50);
-            this.btnSistema.TabIndex = 0;
-            this.btnSistema.Text = "Sistema";
-            this.btnSistema.UseVisualStyleBackColor = false;
-            this.btnSistema.Click += new System.EventHandler(this.btnSistema_Click);
+            this.btnMenuAdminstracion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMenuAdminstracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuAdminstracion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnMenuAdminstracion.Location = new System.Drawing.Point(0, 251);
+            this.btnMenuAdminstracion.Name = "btnMenuAdminstracion";
+            this.btnMenuAdminstracion.Size = new System.Drawing.Size(255, 40);
+            this.btnMenuAdminstracion.TabIndex = 3;
+            this.btnMenuAdminstracion.Text = "Adminstracion";
+            this.btnMenuAdminstracion.UseVisualStyleBackColor = true;
+            this.btnMenuAdminstracion.Click += new System.EventHandler(this.btnMenuAdminstracion_Click);
+            // 
+            // pnlSubmenuSistema
+            // 
+            this.pnlSubmenuSistema.Controls.Add(this.btnSubmenuSistemaUsuario);
+            this.pnlSubmenuSistema.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSubmenuSistema.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pnlSubmenuSistema.Location = new System.Drawing.Point(0, 200);
+            this.pnlSubmenuSistema.Name = "pnlSubmenuSistema";
+            this.pnlSubmenuSistema.Size = new System.Drawing.Size(255, 51);
+            this.pnlSubmenuSistema.TabIndex = 2;
+            this.pnlSubmenuSistema.Visible = false;
+            // 
+            // btnSubmenuSistemaUsuario
+            // 
+            this.btnSubmenuSistemaUsuario.BackColor = System.Drawing.Color.White;
+            this.btnSubmenuSistemaUsuario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSubmenuSistemaUsuario.FlatAppearance.BorderSize = 0;
+            this.btnSubmenuSistemaUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmenuSistemaUsuario.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnSubmenuSistemaUsuario.Location = new System.Drawing.Point(0, 0);
+            this.btnSubmenuSistemaUsuario.Name = "btnSubmenuSistemaUsuario";
+            this.btnSubmenuSistemaUsuario.Size = new System.Drawing.Size(255, 40);
+            this.btnSubmenuSistemaUsuario.TabIndex = 0;
+            this.btnSubmenuSistemaUsuario.Text = "Usuarios";
+            this.btnSubmenuSistemaUsuario.UseVisualStyleBackColor = false;
+            this.btnSubmenuSistemaUsuario.Click += new System.EventHandler(this.btnSubmenuSistemaUsuario_Click);
+            // 
+            // btnMenuSistema
+            // 
+            this.btnMenuSistema.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMenuSistema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuSistema.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnMenuSistema.Location = new System.Drawing.Point(0, 160);
+            this.btnMenuSistema.Name = "btnMenuSistema";
+            this.btnMenuSistema.Size = new System.Drawing.Size(255, 40);
+            this.btnMenuSistema.TabIndex = 1;
+            this.btnMenuSistema.Text = "Sistema";
+            this.btnMenuSistema.UseVisualStyleBackColor = true;
+            this.btnMenuSistema.Click += new System.EventHandler(this.btnMenuSistema_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(255, 160);
+            this.panel1.TabIndex = 0;
             // 
             // pnlPrincipal
             // 
             this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPrincipal.Location = new System.Drawing.Point(254, 0);
+            this.pnlPrincipal.Location = new System.Drawing.Point(255, 0);
             this.pnlPrincipal.Name = "pnlPrincipal";
-            this.pnlPrincipal.Size = new System.Drawing.Size(850, 652);
+            this.pnlPrincipal.Size = new System.Drawing.Size(849, 652);
             this.pnlPrincipal.TabIndex = 2;
             // 
             // Form_Principal
@@ -220,7 +233,8 @@
             this.Text = "Form_Principal";
             this.TransparencyKey = System.Drawing.Color.White;
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlSubmenuAdministracion.ResumeLayout(false);
+            this.pnlSubmenuSistema.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -228,15 +242,19 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnDisciplinas;
-        private System.Windows.Forms.Button btnCategorias;
-        private System.Windows.Forms.Button btnEventos;
-        private System.Windows.Forms.Button btnCompetencias;
-        private System.Windows.Forms.Button btnParticipantes;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnSistema;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Panel pnlPrincipal;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlSubmenuAdministracion;
+        private System.Windows.Forms.Button btnSubmenuCategorias;
+        private System.Windows.Forms.Button btnSubmenuDisciplinas;
+        private System.Windows.Forms.Button btnSubmenuEventos;
+        private System.Windows.Forms.Button btnMenuAdminstracion;
+        private System.Windows.Forms.Panel pnlSubmenuSistema;
+        private System.Windows.Forms.Button btnSubmenuSistemaUsuario;
+        private System.Windows.Forms.Button btnMenuSistema;
+        private System.Windows.Forms.Button btnMenuParticipantes;
+        private System.Windows.Forms.Button btnMenuCompetencias;
 
 
     }
