@@ -12,28 +12,14 @@ namespace Vistas
 {
     public partial class fmrlogin : Form
     {
+        public Usuario oUser { get; private set; }
 
         public bool logginSuccess { get; private set; }
 
-        Roles oAdministrador = new Roles(1, "administrador");
-        Roles oVendedor = new Roles(2, "vendedor");
-        Roles oOperador = new Roles(3, "operador");
-
-        Usuario oUserAdmin = new Usuario("admin", "admin", 1);
-        Usuario oUserVendedor = new Usuario("vendedor", "vendedor", 2);
-        Usuario oUserOperador = new Usuario("operador", "operador", 3);
-        List<Usuario> listaUsuarios = new List<Usuario>();
         
-
-        public void cargarUsuarios() 
-        {
-            listaUsuarios.AddRange(new List<Usuario> { oUserAdmin, oUserOperador, oUserVendedor });
-        }
-
         public fmrlogin()
         {
             InitializeComponent();
-            cargarUsuarios();
             logginSuccess = false;
         }
 
@@ -77,22 +63,16 @@ namespace Vistas
         {
             if(validacionDeCamposVacios())
             {
-                bool usuarioEncontrado = false;
-                foreach(var item in listaUsuarios)
+              
+                if (UsuarioCtrl.verificar_Usuario_Contraseña(txtUsuario.Text,txtPassword.Text))
                 {
-                    if (item.Usu_NombreUsuario.Equals(txtUsuario.Text) && item.Usu_Contraseña.Equals(txtPassword.Text))
-                    {
-                        usuarioEncontrado = true;
-                    }
-                }
-                if (usuarioEncontrado)
-                {
+                    oUser = UsuarioCtrl.obtenerUsuario(txtUsuario.Text,txtPassword.Text);
                     this.logginSuccess = true;
                     this.Close();
                 }
                 else 
                 {
-                    MessageBox.Show("No se Encontro al usuario, compruebe el usuario y el password.");
+                    MessageBox.Show("no se encontro al usuario ingresado, Compruebe el nombre de usuario y el password.");
                     limpiar();
                 }
             }
@@ -103,5 +83,6 @@ namespace Vistas
 
             
         }
+
     }
 }

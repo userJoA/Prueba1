@@ -6,15 +6,27 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ClasesBase;
 
 namespace Vistas
 {
     public partial class Form_Principal : Form
     {
-        public Form_Principal()
+
+        public Form_Principal(Usuario oUser)
         {
             InitializeComponent();
-            IsMdiContainer = true;
+            switch (oUser.Rol_Codigo) 
+            {
+                case 1: btnMenuAdminstracion.Enabled = false;
+                        btnMenuCompetencias.Enabled = false;
+                        btnMenuParticipantes.Enabled = false;
+                        break;
+                case 2: btnMenuSistema.Enabled = false;
+                    break;
+                case 3: 
+                    break;
+            }
         }
 
         
@@ -104,7 +116,7 @@ namespace Vistas
             cargarFormulario(new Form_AltaParticipantes());
             ocultarSubmenu();
         }
-    
+
 
     }
 }

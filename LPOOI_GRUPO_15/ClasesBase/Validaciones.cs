@@ -11,6 +11,7 @@ namespace ClasesBase
 
         public static void soloLeteras(KeyPressEventArgs v) 
         {
+
             if (char.IsLetter(v.KeyChar)) 
             {
                 v.Handled = false;
@@ -84,7 +85,6 @@ namespace ClasesBase
             }
 
         }
-
 
 
     }

@@ -54,13 +54,13 @@
             // lblAltaEventos
             // 
             this.lblAltaEventos.AutoSize = true;
-            this.lblAltaEventos.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltaEventos.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAltaEventos.ForeColor = System.Drawing.Color.Black;
-            this.lblAltaEventos.Location = new System.Drawing.Point(301, 288);
+            this.lblAltaEventos.Location = new System.Drawing.Point(37, 46);
             this.lblAltaEventos.Name = "lblAltaEventos";
-            this.lblAltaEventos.Size = new System.Drawing.Size(233, 37);
+            this.lblAltaEventos.Size = new System.Drawing.Size(177, 30);
             this.lblAltaEventos.TabIndex = 2;
-            this.lblAltaEventos.Text = "Nuevo Evento";
+            this.lblAltaEventos.Text = "PANEL EVENTOS";
             // 
             // Form_AltaEventos
             // 

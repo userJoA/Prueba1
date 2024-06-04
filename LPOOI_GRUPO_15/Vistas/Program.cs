@@ -19,7 +19,7 @@ namespace Vistas
             Application.Run(formLogin);
             if (formLogin.logginSuccess)
             {
-                Application.Run(new Form_Principal());
+                Application.Run(new Form_Principal(formLogin.oUser));
             }
         }
     }

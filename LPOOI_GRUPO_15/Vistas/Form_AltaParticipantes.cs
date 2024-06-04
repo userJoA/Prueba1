@@ -19,7 +19,13 @@ namespace Vistas
             InitializeComponent();
             cmbNacionalidad.SelectedIndex = 0;
             cmbGenero.SelectedIndex = 0;
+            load_participantes();
             
+        }
+
+        private void load_participantes() 
+        {
+            dtgwListaParticipantes.DataSource = ParticipanteCtrl.lista_Participantes();
         }
 
         private bool validacionDeCamposVacios() {
@@ -105,10 +111,12 @@ namespace Vistas
             cmbGenero.SelectedIndex = 0;
             txtAltura.Clear();
             txtPeso.Clear();
-            //dttmFechaNac.ResetText();
+            dttmFechaNac.Value = dttmFechaNac.MaxDate ;
             txtDireccion.Clear();
             txtEmail.Clear();
             txtNombre.Focus();
+            txtID.Clear();
+            load_participantes();
         }
 
         private void borrarMsjError() 
@@ -134,64 +142,45 @@ namespace Vistas
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             borrarMsjError();
-            if (validacionDeCamposVacios())
+            if (txtID.Text == "")
             {
-                DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas guardar los datos?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (resultado == DialogResult.Yes)
+                if (validacionDeCamposVacios())
                 {
-                    int d = Convert.ToInt32(txtDNI.Text);
-                    double alt = Convert.ToDouble(txtAltura.Text);
-                    double pes = Convert.ToDouble(txtPeso.Text);
-                    oAtletla = new Atleta(txtNombre.Text, txtApellido.Text, Convert.ToInt32(txtDNI.Text), cmbNacionalidad.SelectedItem.ToString(), txtEntrenador.Text, cmbGenero.SelectedItem.ToString(), Convert.ToDouble(txtAltura.Text), Convert.ToDouble(txtPeso.Text), dttmFechaNac.Value, txtDireccion.Text, txtEmail.Text);
-                    oAtletla.ToString();
-                    limpiarForm(); 
-                }
-                else
-                {
-                    MessageBox.Show("Operacion Cancelada");
-                }
-            }
-            else { MessageBox.Show("Debe Completar todos los campos para llenar el formulario", " Hay campos del formulario sin llenar", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-        }
+                    DialogResult resultado = MessageBox.Show("¿Quiere registrar al participante?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (resultado == DialogResult.Yes)
+                    {
+                        Atleta oAtl = new Atleta();
+                        oAtl.Atl_Nombre = txtNombre.Text;
+                        oAtl.Atl_Apellido = txtApellido.Text;
+                        oAtl.Atl_DNI = Convert.ToInt32(txtDNI.Text);
+                        oAtl.Atl_Nacionalidad = cmbNacionalidad.SelectedItem.ToString();
+                        oAtl.Atl_Entrenador = txtEntrenador.Text;
+                        oAtl.Atl_Genero = cmbGenero.SelectedItem.ToString();
+                        oAtl.Atl_Altura = Convert.ToDouble(txtAltura.Text);
+                        oAtl.Atl_Peso = Convert.ToDouble(txtPeso.Text);
+                        oAtl.Atl_Email = txtEmail.Text;
+                        oAtl.Atl_Direccion = txtDireccion.Text;
+                        oAtl.Atl_FechaNac = dttmFechaNac.Value;
 
-        /*private void txtAltura_Validating(object sender, CancelEventArgs e)
-        {
-            double salida;
-            if (!double.TryParse(txtAltura.Text, out salida))
-            {
-                errFormAltaParticipante.SetError(txtAltura, "Debe ingresar un valor Numerico");
+                        ParticipanteCtrl.save_participante(oAtl);
+                        MessageBox.Show("Participante agregado correctamente", "operacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        limpiarForm();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Operacion Cancelada");
+                    }
+                }
+                else { MessageBox.Show("Debe Completar todos los campos para llenar el formulario", " Hay campos del formulario sin llenar", MessageBoxButtons.OK, MessageBoxIcon.Information); }
             }
             else 
             {
-                errFormAltaParticipante.SetError(txtAltura,"");
+                MessageBox.Show("El Participante Ya esta esta registrado");
             }
+            
+            
         }
 
-        private void txtPeso_Validating(object sender, CancelEventArgs e)
-        {
-            double salida;
-            if (!double.TryParse(txtPeso.Text, out salida))
-            {
-                errFormAltaParticipante.SetError(txtPeso, "Debe ingresar un valor Numerico");
-            }
-            else
-            {
-                errFormAltaParticipante.SetError(txtPeso, "");
-            }
-        }
-
-        private void txtDNI_Validating(object sender, CancelEventArgs e)
-        {
-            int salida;
-            if (!int.TryParse(txtDNI.Text, out salida))
-            {
-                errFormAltaParticipante.SetError(txtDNI, "Debe ingresar un valor Numerico");
-            }
-            else
-            {
-                errFormAltaParticipante.SetError(txtDNI, "");
-            }
-        }*/
 
         private void txtAltura_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -208,11 +197,93 @@ namespace Vistas
             Validaciones.soloNumeros(e);
         }
 
+      /*  private void txtBusquedaPorDNI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validaciones.soloNumeros(e);
+        }*/
+
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
+            borrarMsjError();
             limpiarForm();
         }
 
-       
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (txtID.Text != "")
+            {
+                DialogResult resultado = MessageBox.Show("Deseas Modificar a " + dtgwListaParticipantes.CurrentRow.Cells["Nombre"].Value.ToString() +" "+ dtgwListaParticipantes.CurrentRow.Cells["Apellido"].Value.ToString() + "?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (resultado == DialogResult.Yes)
+                {
+                    Atleta oAtl = new Atleta();
+                    oAtl.Atl_ID = Convert.ToInt32(txtID.Text);
+                    oAtl.Atl_Nombre = txtNombre.Text;
+                    oAtl.Atl_Apellido = txtApellido.Text;
+                    oAtl.Atl_DNI = Convert.ToInt32(txtDNI.Text);
+                    oAtl.Atl_Entrenador = txtEntrenador.Text;
+                    oAtl.Atl_Direccion = txtDireccion.Text;
+                    oAtl.Atl_Email = txtEmail.Text;
+                    oAtl.Atl_Altura = Convert.ToInt32(txtAltura.Text);
+                    oAtl.Atl_Peso = Convert.ToInt32(txtPeso.Text);
+                    oAtl.Atl_FechaNac = dttmFechaNac.Value;
+                    oAtl.Atl_Nacionalidad = cmbNacionalidad.SelectedItem.ToString();
+                    oAtl.Atl_Genero = cmbGenero.SelectedItem.ToString();
+
+                    ParticipanteCtrl.modificar_participante(oAtl);
+
+                    limpiarForm();
+                }
+            }
+            else
+            {
+                
+            }
+        }
+
+        private void dtgwListaParticipantes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dtgwListaParticipantes.CurrentRow != null)
+            {
+                int indiceCmbGenero = cmbGenero.FindString(dtgwListaParticipantes.CurrentRow.Cells["Genero"].Value.ToString());
+                int indiceCmbNacionalidad = cmbNacionalidad.FindString(dtgwListaParticipantes.CurrentRow.Cells["Nacionalidad"].Value.ToString());
+                
+                txtNombre.Text=dtgwListaParticipantes.CurrentRow.Cells["Nombre"].Value.ToString();
+                txtApellido.Text=dtgwListaParticipantes.CurrentRow.Cells["Apellido"].Value.ToString();
+                txtDNI.Text=dtgwListaParticipantes.CurrentRow.Cells["DNI"].Value.ToString();
+                txtEntrenador.Text=dtgwListaParticipantes.CurrentRow.Cells["Entrenador"].Value.ToString();
+                cmbNacionalidad.SelectedIndex = indiceCmbNacionalidad;
+                cmbGenero.SelectedIndex = indiceCmbGenero;
+                txtAltura.Text=dtgwListaParticipantes.CurrentRow.Cells["Altura"].Value.ToString();
+                txtPeso.Text=dtgwListaParticipantes.CurrentRow.Cells["Peso"].Value.ToString();
+                txtDireccion.Text=dtgwListaParticipantes.CurrentRow.Cells["Direccion"].Value.ToString();
+                txtID.Text=dtgwListaParticipantes.CurrentRow.Cells["ID"].Value.ToString();
+                txtEmail.Text = dtgwListaParticipantes.CurrentRow.Cells["Email"].Value.ToString();
+                dttmFechaNac.Value = Convert.ToDateTime (dtgwListaParticipantes.CurrentRow.Cells["FechaNac"].Value.ToString());
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if(txtID.Text!="")
+            {
+                DialogResult res = MessageBox.Show("Deseas Eliminar a " + dtgwListaParticipantes.CurrentRow.Cells["Nombre"].Value.ToString() + " " + dtgwListaParticipantes.CurrentRow.Cells["Apellido"].Value.ToString() + "?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if(res == DialogResult.Yes)
+                {
+                    ParticipanteCtrl.eliminar_Usuario(Convert.ToInt32(txtID.Text));
+                    load_participantes();
+                }
+            }
+        }
+
+        private void btnBuscarParticipantes_Click(object sender, EventArgs e)
+        {
+            if(txtBusquedaPorDNI.Text != "")
+            {           
+               dtgwListaParticipantes.DataSource = ParticipanteCtrl.search_participantes(txtBusquedaPorDNI.Text);
+            }
+        }
+
+  
+
     }
 }
