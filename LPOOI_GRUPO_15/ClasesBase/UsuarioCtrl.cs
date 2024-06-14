@@ -21,7 +21,6 @@ namespace ClasesBase
             cmd.CommandText = "SELECT COUNT(*) FROM Usuario WHERE Usu_NombreUsuario = @user AND Usu_Contraseña = @pass";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
-
             cmd.Parameters.AddWithValue("@user", usuario);
             cmd.Parameters.AddWithValue("@pass", password);
 
@@ -159,7 +158,6 @@ namespace ClasesBase
             cmd.CommandText += " Usu_Contraseña as 'Contraseña', ";
             cmd.CommandText += " Usu_ApellidoNombre as 'Nombre Y Apellido', ";
             cmd.CommandText += " U.Rol_Codigo ";
-            //cmd.CommandText += " Usu_ID ";
             cmd.CommandText += " FROM Usuario as U";
             cmd.CommandText += " LEFT JOIN Roles as R ON (R.Rol_Codigo=U.Rol_Codigo)";
             

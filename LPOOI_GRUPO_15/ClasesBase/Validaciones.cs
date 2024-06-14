@@ -79,8 +79,7 @@ namespace ClasesBase
                 v.Handled = false;
             }
             else
-            {
-                v.Handled = true;
+            {   v.Handled = true;
                 MessageBox.Show("Solo debe Ingresar Letras");
             }
 
