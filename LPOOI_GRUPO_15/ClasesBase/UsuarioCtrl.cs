@@ -151,23 +151,15 @@ namespace ClasesBase
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT ";
-            cmd.CommandText += " Usu_ID as 'ID', ";
-            cmd.CommandText += " Rol_Descripcion as 'Rol', ";
-            cmd.CommandText += " Usu_NombreUsuario as 'Usuario', ";
-            cmd.CommandText += " Usu_Contraseña as 'Contraseña', ";
-            cmd.CommandText += " Usu_ApellidoNombre as 'Nombre Y Apellido', ";
-            cmd.CommandText += " U.Rol_Codigo ";
-            cmd.CommandText += " FROM Usuario as U";
-            cmd.CommandText += " LEFT JOIN Roles as R ON (R.Rol_Codigo=U.Rol_Codigo)";
-            
-            cmd.CommandText += " WHERE";
-            cmd.CommandText += " Usu_NombreUsuario LIKE @pattern ";
-
-            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "Consulta_Usuarios_Nombre";
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
 
-            cmd.Parameters.AddWithValue("@pattern","%"+sPattern+"%");
+            SqlParameter param;
+            param = new SqlParameter("@Nombre", SqlDbType.VarChar);
+            param.Direction = ParameterDirection.Input;
+            param.Value = sPattern;
+            cmd.Parameters.Add(param);
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();

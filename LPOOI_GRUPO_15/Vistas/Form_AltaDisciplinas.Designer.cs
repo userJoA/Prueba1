@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblNuevaDisciplina = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
@@ -40,8 +43,10 @@
             this.pnlBottomDiscplina = new System.Windows.Forms.Panel();
             this.errpFormularioAltaDisciplna = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtgwDisciplina = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.errpFormularioAltaDisciplna)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgwDisciplina)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNuevaDisciplina
@@ -126,7 +131,6 @@
             this.cmbNombre.ForeColor = System.Drawing.Color.Black;
             this.cmbNombre.FormattingEnabled = true;
             this.cmbNombre.Items.AddRange(new object[] {
-            "seleccione una disciplina",
             "Atletismo",
             "Natacion",
             "Ciclismo"});
@@ -171,23 +175,66 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DATOS DE LA DISCIPLiNA";
             // 
+            // dtgwDisciplina
+            // 
+            this.dtgwDisciplina.AllowUserToAddRows = false;
+            this.dtgwDisciplina.AllowUserToDeleteRows = false;
+            this.dtgwDisciplina.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dtgwDisciplina.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dtgwDisciplina.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgwDisciplina.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dtgwDisciplina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgwDisciplina.Cursor = System.Windows.Forms.Cursors.Default;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgwDisciplina.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dtgwDisciplina.GridColor = System.Drawing.Color.Black;
+            this.dtgwDisciplina.Location = new System.Drawing.Point(61, 294);
+            this.dtgwDisciplina.Name = "dtgwDisciplina";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgwDisciplina.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dtgwDisciplina.Size = new System.Drawing.Size(721, 150);
+            this.dtgwDisciplina.TabIndex = 14;
+            this.dtgwDisciplina.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgwDisciplina_CellClick);
+            // 
             // Form_AltaDisciplinas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 652);
+            this.Controls.Add(this.dtgwDisciplina);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pnlBottomDiscplina);
             this.Controls.Add(this.pnlTopDisciplina);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.lblNuevaDisciplina);
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_AltaDisciplinas";
             this.Text = "f";
             ((System.ComponentModel.ISupportInitialize)(this.errpFormularioAltaDisciplna)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgwDisciplina)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,5 +253,6 @@
         private System.Windows.Forms.Panel pnlBottomDiscplina;
         private System.Windows.Forms.ErrorProvider errpFormularioAltaDisciplna;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dtgwDisciplina;
     }
 }

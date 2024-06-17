@@ -197,10 +197,10 @@ namespace Vistas
             Validaciones.soloNumeros(e);
         }
 
-      /*  private void txtBusquedaPorDNI_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtBusquedaPorDNI_KeyPress(object sender, KeyPressEventArgs e)
         {
             Validaciones.soloNumeros(e);
-        }*/
+        }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
@@ -275,15 +275,38 @@ namespace Vistas
             }
         }
 
-        private void btnBuscarParticipantes_Click(object sender, EventArgs e)
+
+        private void rdbOrdenarPorDNI_CheckedChanged(object sender, EventArgs e)
         {
-            if(txtBusquedaPorDNI.Text != "")
-            {           
-               dtgwListaParticipantes.DataSource = ParticipanteCtrl.search_participantes(txtBusquedaPorDNI.Text);
+            dtgwListaParticipantes.DataSource = ParticipanteCtrl.orden_DNI();
+        }
+
+        private void rdbOrdenarPorApellido_CheckedChanged(object sender, EventArgs e)
+        {
+            dtgwListaParticipantes.DataSource = ParticipanteCtrl.orden_Apellido();
+        }
+
+        private void rdbSinOrden_CheckedChanged(object sender, EventArgs e)
+        {
+            load_participantes();
+        }
+
+        private void txtBusquedaPorDNI_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBusquedaPorDNI.Text != "")
+            {
+                dtgwListaParticipantes.DataSource = ParticipanteCtrl.search_participantes(txtBusquedaPorDNI.Text);
+
+            }
+            else
+            {
+                load_participantes();
             }
         }
 
-  
+
+
+
 
     }
 }

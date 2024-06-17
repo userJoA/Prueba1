@@ -69,6 +69,66 @@ namespace ClasesBase
             cnn.Close();
         }
 
+        public static DataTable orden_DNI() 
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "Consulta_Atletas_DNI";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+
+            try
+            {
+                cnn.Open();
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                cnn.Close();
+            }
+
+            return dt;
+
+        }
+
+        public static DataTable orden_Apellido()
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "Consulta_Atletas_Apellido";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+
+            try
+            {
+                cnn.Open();
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                cnn.Close();
+            }
+
+            return dt;
+
+        }
+
         public static DataTable search_participantes(string sPattern)
         {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
@@ -89,7 +149,7 @@ namespace ClasesBase
             cmd.CommandText += " Atl_Email as 'Email' ";
             cmd.CommandText += " FROM Atleta ";
             cmd.CommandText += " WHERE";
-            cmd.CommandText += " Atl_Apellido LIKE @pattern";
+            cmd.CommandText += " Atl_DNI LIKE @pattern";
 
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;

@@ -62,18 +62,22 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
             this.grbxBuscarParticipantes = new System.Windows.Forms.GroupBox();
-            this.btnBuscarParticipantes = new System.Windows.Forms.Button();
             this.lblBusquedaParticipante = new System.Windows.Forms.Label();
             this.txtBusquedaPorDNI = new System.Windows.Forms.TextBox();
             this.grbListaParicipantes = new System.Windows.Forms.GroupBox();
             this.dtgwListaParticipantes = new System.Windows.Forms.DataGridView();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.grbxOrdenar = new System.Windows.Forms.GroupBox();
+            this.rdbSinOrden = new System.Windows.Forms.RadioButton();
+            this.rdbOrdenarPorApellido = new System.Windows.Forms.RadioButton();
+            this.rdbOrdenarPorDNI = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.errFormAltaParticipante)).BeginInit();
             this.grbxDatosParticpantes.SuspendLayout();
             this.grbxBuscarParticipantes.SuspendLayout();
             this.grbListaParicipantes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgwListaParticipantes)).BeginInit();
+            this.grbxOrdenar.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -441,34 +445,20 @@
             // 
             // grbxBuscarParticipantes
             // 
-            this.grbxBuscarParticipantes.Controls.Add(this.btnBuscarParticipantes);
             this.grbxBuscarParticipantes.Controls.Add(this.lblBusquedaParticipante);
             this.grbxBuscarParticipantes.Controls.Add(this.txtBusquedaPorDNI);
             this.grbxBuscarParticipantes.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbxBuscarParticipantes.Location = new System.Drawing.Point(55, 367);
             this.grbxBuscarParticipantes.Name = "grbxBuscarParticipantes";
-            this.grbxBuscarParticipantes.Size = new System.Drawing.Size(721, 56);
+            this.grbxBuscarParticipantes.Size = new System.Drawing.Size(360, 56);
             this.grbxBuscarParticipantes.TabIndex = 32;
             this.grbxBuscarParticipantes.TabStop = false;
             this.grbxBuscarParticipantes.Text = "BUSCAR";
             // 
-            // btnBuscarParticipantes
-            // 
-            this.btnBuscarParticipantes.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.btnBuscarParticipantes.FlatAppearance.BorderSize = 0;
-            this.btnBuscarParticipantes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarParticipantes.Location = new System.Drawing.Point(413, 14);
-            this.btnBuscarParticipantes.Name = "btnBuscarParticipantes";
-            this.btnBuscarParticipantes.Size = new System.Drawing.Size(75, 32);
-            this.btnBuscarParticipantes.TabIndex = 2;
-            this.btnBuscarParticipantes.Text = "Buscar";
-            this.btnBuscarParticipantes.UseVisualStyleBackColor = false;
-            this.btnBuscarParticipantes.Click += new System.EventHandler(this.btnBuscarParticipantes_Click);
-            // 
             // lblBusquedaParticipante
             // 
             this.lblBusquedaParticipante.AutoSize = true;
-            this.lblBusquedaParticipante.Location = new System.Drawing.Point(35, 23);
+            this.lblBusquedaParticipante.Location = new System.Drawing.Point(20, 23);
             this.lblBusquedaParticipante.Name = "lblBusquedaParticipante";
             this.lblBusquedaParticipante.Size = new System.Drawing.Size(92, 15);
             this.lblBusquedaParticipante.TabIndex = 1;
@@ -476,10 +466,12 @@
             // 
             // txtBusquedaPorDNI
             // 
-            this.txtBusquedaPorDNI.Location = new System.Drawing.Point(144, 20);
+            this.txtBusquedaPorDNI.Location = new System.Drawing.Point(133, 20);
             this.txtBusquedaPorDNI.Name = "txtBusquedaPorDNI";
-            this.txtBusquedaPorDNI.Size = new System.Drawing.Size(261, 23);
+            this.txtBusquedaPorDNI.Size = new System.Drawing.Size(179, 23);
             this.txtBusquedaPorDNI.TabIndex = 0;
+            this.txtBusquedaPorDNI.TextChanged += new System.EventHandler(this.txtBusquedaPorDNI_TextChanged);
+            this.txtBusquedaPorDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBusquedaPorDNI_KeyPress);
             // 
             // grbListaParicipantes
             // 
@@ -535,11 +527,61 @@
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // grbxOrdenar
+            // 
+            this.grbxOrdenar.Controls.Add(this.rdbSinOrden);
+            this.grbxOrdenar.Controls.Add(this.rdbOrdenarPorApellido);
+            this.grbxOrdenar.Controls.Add(this.rdbOrdenarPorDNI);
+            this.grbxOrdenar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbxOrdenar.Location = new System.Drawing.Point(421, 367);
+            this.grbxOrdenar.Name = "grbxOrdenar";
+            this.grbxOrdenar.Size = new System.Drawing.Size(355, 56);
+            this.grbxOrdenar.TabIndex = 36;
+            this.grbxOrdenar.TabStop = false;
+            this.grbxOrdenar.Text = "ORDENAR POR";
+            // 
+            // rdbSinOrden
+            // 
+            this.rdbSinOrden.AutoSize = true;
+            this.rdbSinOrden.Location = new System.Drawing.Point(218, 24);
+            this.rdbSinOrden.Name = "rdbSinOrden";
+            this.rdbSinOrden.Size = new System.Drawing.Size(77, 19);
+            this.rdbSinOrden.TabIndex = 2;
+            this.rdbSinOrden.TabStop = true;
+            this.rdbSinOrden.Text = "Sin Orden";
+            this.rdbSinOrden.UseVisualStyleBackColor = true;
+            this.rdbSinOrden.CheckedChanged += new System.EventHandler(this.rdbSinOrden_CheckedChanged);
+            // 
+            // rdbOrdenarPorApellido
+            // 
+            this.rdbOrdenarPorApellido.AutoSize = true;
+            this.rdbOrdenarPorApellido.Location = new System.Drawing.Point(132, 24);
+            this.rdbOrdenarPorApellido.Name = "rdbOrdenarPorApellido";
+            this.rdbOrdenarPorApellido.Size = new System.Drawing.Size(69, 19);
+            this.rdbOrdenarPorApellido.TabIndex = 1;
+            this.rdbOrdenarPorApellido.TabStop = true;
+            this.rdbOrdenarPorApellido.Text = "Apellido";
+            this.rdbOrdenarPorApellido.UseVisualStyleBackColor = true;
+            this.rdbOrdenarPorApellido.CheckedChanged += new System.EventHandler(this.rdbOrdenarPorApellido_CheckedChanged);
+            // 
+            // rdbOrdenarPorDNI
+            // 
+            this.rdbOrdenarPorDNI.AutoSize = true;
+            this.rdbOrdenarPorDNI.Location = new System.Drawing.Point(64, 24);
+            this.rdbOrdenarPorDNI.Name = "rdbOrdenarPorDNI";
+            this.rdbOrdenarPorDNI.Size = new System.Drawing.Size(45, 19);
+            this.rdbOrdenarPorDNI.TabIndex = 0;
+            this.rdbOrdenarPorDNI.TabStop = true;
+            this.rdbOrdenarPorDNI.Text = "DNI";
+            this.rdbOrdenarPorDNI.UseVisualStyleBackColor = true;
+            this.rdbOrdenarPorDNI.CheckedChanged += new System.EventHandler(this.rdbOrdenarPorDNI_CheckedChanged);
+            // 
             // Form_AltaParticipantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(849, 652);
+            this.Controls.Add(this.grbxOrdenar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.grbListaParicipantes);
@@ -564,6 +606,8 @@
             this.grbxBuscarParticipantes.PerformLayout();
             this.grbListaParicipantes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgwListaParticipantes)).EndInit();
+            this.grbxOrdenar.ResumeLayout(false);
+            this.grbxOrdenar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -609,7 +653,10 @@
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Button btnBuscarParticipantes;
         private System.Windows.Forms.Label lblBusquedaParticipante;
+        private System.Windows.Forms.GroupBox grbxOrdenar;
+        private System.Windows.Forms.RadioButton rdbOrdenarPorApellido;
+        private System.Windows.Forms.RadioButton rdbOrdenarPorDNI;
+        private System.Windows.Forms.RadioButton rdbSinOrden;
     }
 }
