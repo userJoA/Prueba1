@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Repositorios\\Prueba1\\LPOOI_GRUPO_155\\LPOOI_GRUPO_15\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{375540A6-7536-4FDB-9F56-9EA9337B1ABE}|ClasesBase\\ClasesBase.csproj|d:\\repositorios\\prueba1\\lpooi_grupo_155\\lpooi_grupo_15\\clasesbase\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{375540A6-7536-4FDB-9F56-9EA9337B1ABE}|ClasesBase\\ClasesBase.csproj|solutionrelative:clasesbase\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "app.config",
+              "DocumentMoniker": "D:\\Repositorios\\Prueba1\\LPOOI_GRUPO_155\\LPOOI_GRUPO_15\\ClasesBase\\app.config",
+              "RelativeDocumentMoniker": "ClasesBase\\app.config",
+              "ToolTip": "D:\\Repositorios\\Prueba1\\LPOOI_GRUPO_155\\LPOOI_GRUPO_15\\ClasesBase\\app.config",
+              "RelativeToolTip": "ClasesBase\\app.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-07-05T18:45:01.858Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -106,7 +106,7 @@ namespace Vistas
             param.Value = odisciplina.Dis_Descripcion;
             cmd.Parameters.Add(param);
 
-            param = new SqlParameter("@disId", SqlDbType.VarChar);
+            param = new SqlParameter("disId", SqlDbType.Int);
             param.Direction = ParameterDirection.Input;
             param.Value = odisciplina.Dis_ID;
             cmd.Parameters.Add(param);
@@ -127,7 +127,7 @@ namespace Vistas
             cmd.Connection = cnn;
 
             SqlParameter param;
-            param = new SqlParameter("@disid", SqlDbType.VarChar);
+            param = new SqlParameter("@disid", SqlDbType.Int);
             param.Direction = ParameterDirection.Input;
             param.Value = disciplinaid;
             cmd.Parameters.Add(param);
@@ -234,9 +234,9 @@ namespace Vistas
         private void actualizar() 
         {
 
-            if (!consulta_nombre(txtNombre.Text))
+            if (dtgwDisciplina.CurrentRow.Cells["Nombre"].Value.ToString() != txtNombre.Text && consulta_nombre(txtNombre.Text))
             {
-                MessageBox.Show("No existe la disciplina ingresada");
+                MessageBox.Show("El nombre ya existe");
                 return;
             }
             if (string.IsNullOrEmpty(txtNombre.Text))

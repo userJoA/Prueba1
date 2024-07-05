@@ -460,9 +460,9 @@
             this.lblBusquedaParticipante.AutoSize = true;
             this.lblBusquedaParticipante.Location = new System.Drawing.Point(20, 23);
             this.lblBusquedaParticipante.Name = "lblBusquedaParticipante";
-            this.lblBusquedaParticipante.Size = new System.Drawing.Size(92, 15);
+            this.lblBusquedaParticipante.Size = new System.Drawing.Size(68, 15);
             this.lblBusquedaParticipante.TabIndex = 1;
-            this.lblBusquedaParticipante.Text = "Ingrese Apellido";
+            this.lblBusquedaParticipante.Text = "Ingrese DNI";
             // 
             // txtBusquedaPorDNI
             // 
