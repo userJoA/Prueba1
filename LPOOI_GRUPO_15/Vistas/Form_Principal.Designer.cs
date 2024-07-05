@@ -41,9 +41,9 @@
             this.btnSubmenuSistemaUsuario = new System.Windows.Forms.Button();
             this.btnMenuSistema = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pnlPrincipal = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.pnlSubmenuAdministracion.SuspendLayout();
             this.pnlSubmenuSistema.SuspendLayout();
@@ -245,14 +245,6 @@
             this.panel1.Size = new System.Drawing.Size(255, 160);
             this.panel1.TabIndex = 0;
             // 
-            // pnlPrincipal
-            // 
-            this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPrincipal.Location = new System.Drawing.Point(255, 0);
-            this.pnlPrincipal.Name = "pnlPrincipal";
-            this.pnlPrincipal.Size = new System.Drawing.Size(849, 652);
-            this.pnlPrincipal.TabIndex = 2;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Gainsboro;
@@ -264,6 +256,16 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // pnlPrincipal
+            // 
+            this.pnlPrincipal.BackColor = System.Drawing.Color.White;
+            this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlPrincipal.ForeColor = System.Drawing.Color.Black;
+            this.pnlPrincipal.Location = new System.Drawing.Point(255, 0);
+            this.pnlPrincipal.Name = "pnlPrincipal";
+            this.pnlPrincipal.Size = new System.Drawing.Size(849, 652);
+            this.pnlPrincipal.TabIndex = 2;
             // 
             // Form_Principal
             // 

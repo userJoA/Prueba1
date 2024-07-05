@@ -35,16 +35,16 @@ namespace ClasesBase
             get { return eve_Estado; }
             set { eve_Estado = value; }
         }
-        private DateTime eve_HoraInicio;
+        private DateTime? eve_HoraInicio;
 
-        public DateTime Eve_HoraInicio
+        public DateTime? Eve_HoraInicio
         {
             get { return eve_HoraInicio; }
             set { eve_HoraInicio = value; }
         }
-        private DateTime eve_HoraFin;
+        private DateTime? eve_HoraFin;
 
-        public DateTime Eve_HoraFin
+        public DateTime? Eve_HoraFin
         {
             get { return eve_HoraFin; }
             set { eve_HoraFin = value; }

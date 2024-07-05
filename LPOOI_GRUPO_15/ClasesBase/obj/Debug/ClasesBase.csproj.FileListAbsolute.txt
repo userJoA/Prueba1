@@ -6,6 +6,5 @@ D:\Facultad\LPOO1\proyectos\LPOOI_GRUPO_XX\ClasesBase\obj\Debug\ClasesBase.cspro
 D:\Repositorios\Prueba1\LPOOI_GRUPO_15\ClasesBase\bin\Debug\ClasesBase.dll.config
 D:\Repositorios\Prueba1\LPOOI_GRUPO_15\ClasesBase\bin\Debug\ClasesBase.dll
 D:\Repositorios\Prueba1\LPOOI_GRUPO_15\ClasesBase\bin\Debug\ClasesBase.pdb
-D:\Repositorios\Prueba1\LPOOI_GRUPO_15\ClasesBase\obj\Debug\ClasesBase.csprojResolveAssemblyReference.cache
 D:\Repositorios\Prueba1\LPOOI_GRUPO_15\ClasesBase\obj\Debug\ClasesBase.dll
 D:\Repositorios\Prueba1\LPOOI_GRUPO_15\ClasesBase\obj\Debug\ClasesBase.pdb

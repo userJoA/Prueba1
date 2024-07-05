@@ -15,22 +15,8 @@ namespace ClasesBase
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT ";
-            cmd.CommandText += " Atl_ID as 'ID', ";
-            cmd.CommandText += " Atl_Nombre as 'Nombre', ";
-            cmd.CommandText += " Atl_Apellido as 'Apellido', ";
-            cmd.CommandText += " Atl_DNI as 'DNI', ";
-            cmd.CommandText += " Atl_Nacionalidad as 'Nacionalidad', ";
-            cmd.CommandText += " Atl_Entrenador as 'Entrenador', ";
-            cmd.CommandText += " Atl_Genero as 'Genero', ";
-            cmd.CommandText += " Atl_Altura as 'Altura', ";
-            cmd.CommandText += " Atl_Peso as 'Peso', ";
-            cmd.CommandText += " Atl_FechaNac as 'FechaNac', ";
-            cmd.CommandText += " Atl_Dirección as 'Direccion', ";
-            cmd.CommandText += " Atl_Email as 'Email' ";
-            cmd.CommandText += " FROM Atleta as Atl";
-  
-            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "Listar_Atletas";
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
 
             // Ejecuta la consulta
@@ -215,9 +201,48 @@ namespace ClasesBase
 
             cmd.Parameters.AddWithValue("@pid", pid);
 
+      
             cnn.Open();
             cmd.ExecuteNonQuery();
             cnn.Close();
+        }
+
+        public static string obtenerNombreCompleto(int dni)
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
+
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "Consulta_Atletas_DNI_Busqueda";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            SqlParameter param = new SqlParameter("@dni", SqlDbType.Int);
+            param.Direction = ParameterDirection.Input;
+            param.Value = dni;
+            cmd.Parameters.Add(param);
+
+
+            param = new SqlParameter("@nombre", SqlDbType.VarChar,30);
+            param.Direction = ParameterDirection.Output;
+            param.Value ="";
+            cmd.Parameters.Add(param);
+
+
+            param = new SqlParameter("@apellido", SqlDbType.VarChar,30);
+            param.Direction = ParameterDirection.Output;
+            param.Value = "";
+            cmd.Parameters.Add(param);
+
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+
+            string nombre = Convert.ToString(cmd.Parameters["@nombre"].Value);
+            string apellido = Convert.ToString(cmd.Parameters["@apellido"].Value);
+
+            return string.Format("{0} {1} ({2})", nombre, apellido, dni);
+                  
         }
     }
 }

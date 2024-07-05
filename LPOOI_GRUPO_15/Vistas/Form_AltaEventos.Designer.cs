@@ -31,6 +31,8 @@
             this.pnlTopEventos = new System.Windows.Forms.Panel();
             this.pnlBottomEventos = new System.Windows.Forms.Panel();
             this.lblAltaEventos = new System.Windows.Forms.Label();
+            this.btnNuevoEvento = new System.Windows.Forms.Button();
+            this.btnAnularInscripcionEvento = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // pnlTopEventos
@@ -62,11 +64,33 @@
             this.lblAltaEventos.TabIndex = 2;
             this.lblAltaEventos.Text = "PANEL EVENTOS";
             // 
+            // btnNuevoEvento
+            // 
+            this.btnNuevoEvento.Location = new System.Drawing.Point(246, 166);
+            this.btnNuevoEvento.Name = "btnNuevoEvento";
+            this.btnNuevoEvento.Size = new System.Drawing.Size(251, 69);
+            this.btnNuevoEvento.TabIndex = 3;
+            this.btnNuevoEvento.Text = "Inscripcion a Evento";
+            this.btnNuevoEvento.UseVisualStyleBackColor = true;
+            this.btnNuevoEvento.Click += new System.EventHandler(this.btnNuevoEvento_Click);
+            // 
+            // btnAnularInscripcionEvento
+            // 
+            this.btnAnularInscripcionEvento.Location = new System.Drawing.Point(246, 270);
+            this.btnAnularInscripcionEvento.Name = "btnAnularInscripcionEvento";
+            this.btnAnularInscripcionEvento.Size = new System.Drawing.Size(251, 69);
+            this.btnAnularInscripcionEvento.TabIndex = 4;
+            this.btnAnularInscripcionEvento.Text = "Anular Inscripcion";
+            this.btnAnularInscripcionEvento.UseVisualStyleBackColor = true;
+            this.btnAnularInscripcionEvento.Click += new System.EventHandler(this.btnAnularInscripcionEvento_Click);
+            // 
             // Form_AltaEventos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 613);
+            this.Controls.Add(this.btnAnularInscripcionEvento);
+            this.Controls.Add(this.btnNuevoEvento);
             this.Controls.Add(this.lblAltaEventos);
             this.Controls.Add(this.pnlBottomEventos);
             this.Controls.Add(this.pnlTopEventos);
@@ -83,5 +107,7 @@
         private System.Windows.Forms.Panel pnlTopEventos;
         private System.Windows.Forms.Panel pnlBottomEventos;
         private System.Windows.Forms.Label lblAltaEventos;
+        private System.Windows.Forms.Button btnNuevoEvento;
+        private System.Windows.Forms.Button btnAnularInscripcionEvento;
     }
 }

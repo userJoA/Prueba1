@@ -27,6 +27,7 @@ namespace Vistas
                 case 3: 
                     break;
             }
+            
         }
 
         
@@ -116,7 +117,6 @@ namespace Vistas
             cargarFormulario(new Form_AltaParticipantes());
             ocultarSubmenu();
         }
-
 
     }
 }

@@ -95,6 +95,7 @@ namespace ClasesBase
             set { atl_Email = value; }
         }
 
+
         public Atleta() { }
 
         public Atleta(string nombre, string apellido, int dni, string nacionalidad, string entrenador, string genero, double altura, double peso, DateTime fechaNac, string direccion, string email)
