@@ -17,7 +17,7 @@ namespace Vistas
         public form_InscripcionEventos()
         {
             InitializeComponent();
-            cargar_eventos();
+            //cargar_eventos();
             cargar_Atletas_Competencias();
         }
 
@@ -71,14 +71,19 @@ namespace Vistas
 
         }
 
-        private DataTable lista_Eventos()
+        private DataTable lista_EventosCompetencias(string competencia)
         {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "Listar_View_Eventos";
+            cmd.CommandText = "Consulta_ViewEvento_Filtro_Competencias";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
+
+            SqlParameter param = new SqlParameter("@competencia", SqlDbType.VarChar);
+            param.Direction = ParameterDirection.Input;
+            param.Value = competencia;
+            cmd.Parameters.Add(param);
 
             // Ejecuta la consulta
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -124,7 +129,7 @@ namespace Vistas
             param.Value = oevento.Eve_Estado;
             cmd.Parameters.Add(param);
 
-            param = new SqlParameter("@eveInicio", SqlDbType.DateTime);
+            param = new SqlParameter("@eveInicio", SqlDbType.Time);
             param.Direction = ParameterDirection.Input;
             if (oevento.Eve_HoraInicio.HasValue)
                 param.Value = oevento.Eve_HoraInicio.Value;
@@ -132,7 +137,7 @@ namespace Vistas
                 param.Value = DBNull.Value;
             cmd.Parameters.Add(param);
 
-            param = new SqlParameter("@eveFin", SqlDbType.DateTime);
+            param = new SqlParameter("@eveFin", SqlDbType.Time);
             param.Direction = ParameterDirection.Input;
             if (oevento.Eve_HoraFin.HasValue)
                 param.Value = oevento.Eve_HoraFin.Value;
@@ -148,11 +153,19 @@ namespace Vistas
 
         private void cargar_eventos() 
         {
-            dtgwInscripciones.DataSource = lista_Eventos();
+            string competencia = cmbCompetencias.Text;
+            dtgwInscripciones.DataSource = lista_EventosCompetencias(competencia);
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            
+            if (Form_AltaCompetencias.comprobarCompetenciaCancelada(cmbCompetencias.Text))
+            {
+                MessageBox.Show("No se puede inscribir a la competencia, porque esta cancelada");
+                return;
+            }
+
             DateTime fec = DateTime.Today;
             int comId = int.Parse(cmbCompetencias.SelectedValue.ToString());
             
@@ -172,7 +185,7 @@ namespace Vistas
             }
 
 
-            DialogResult resultado = MessageBox.Show("Deseas Ingresar un nueva competencia?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult resultado = MessageBox.Show("Deseas Inscribir al participante " + lblInfo.Text + " En la competencia " + cmbCompetencias.Text + "?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (resultado == DialogResult.Yes)
             {
                 Evento oEvento = new Evento();
@@ -182,7 +195,7 @@ namespace Vistas
                 oEvento.Eve_HoraInicio = null;
                 oEvento.Eve_HoraFin = null;
                 insertar_Evento(oEvento);
-                limpiar();
+                //limpiar();
                 cargar_eventos();
             }
         }
@@ -191,6 +204,11 @@ namespace Vistas
         {
             int cmbDni = int.Parse(cmbAtletas.Text);
             lblInfo.Text = ParticipanteCtrl.obtenerNombreCompleto(cmbDni);
+        }
+
+        private void cmbCompetencias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cargar_eventos();
         }
 
 

@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnMenuParticipantes = new System.Windows.Forms.Button();
+            this.pnlMenuCompetencias = new System.Windows.Forms.Panel();
+            this.btnResultados = new System.Windows.Forms.Button();
+            this.btnCronometraje = new System.Windows.Forms.Button();
+            this.btnMenuCrudCompetencias = new System.Windows.Forms.Button();
             this.btnMenuCompetencias = new System.Windows.Forms.Button();
             this.pnlSubmenuAdministracion = new System.Windows.Forms.Panel();
             this.btnSubmenuCategorias = new System.Windows.Forms.Button();
@@ -45,6 +49,7 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pnlPrincipal = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
+            this.pnlMenuCompetencias.SuspendLayout();
             this.pnlSubmenuAdministracion.SuspendLayout();
             this.pnlSubmenuSistema.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -55,6 +60,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
             this.panel2.Controls.Add(this.btnMenuParticipantes);
+            this.panel2.Controls.Add(this.pnlMenuCompetencias);
             this.panel2.Controls.Add(this.btnMenuCompetencias);
             this.panel2.Controls.Add(this.pnlSubmenuAdministracion);
             this.panel2.Controls.Add(this.btnMenuAdminstracion);
@@ -77,7 +83,7 @@
             this.btnMenuParticipantes.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnMenuParticipantes.Image = global::Vistas.Properties.Resources.persona;
             this.btnMenuParticipantes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenuParticipantes.Location = new System.Drawing.Point(0, 463);
+            this.btnMenuParticipantes.Location = new System.Drawing.Point(0, 591);
             this.btnMenuParticipantes.Name = "btnMenuParticipantes";
             this.btnMenuParticipantes.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.btnMenuParticipantes.Size = new System.Drawing.Size(255, 40);
@@ -85,6 +91,72 @@
             this.btnMenuParticipantes.Text = "Participantes";
             this.btnMenuParticipantes.UseVisualStyleBackColor = true;
             this.btnMenuParticipantes.Click += new System.EventHandler(this.btnMenuParticipantes_Click);
+            // 
+            // pnlMenuCompetencias
+            // 
+            this.pnlMenuCompetencias.Controls.Add(this.btnResultados);
+            this.pnlMenuCompetencias.Controls.Add(this.btnCronometraje);
+            this.pnlMenuCompetencias.Controls.Add(this.btnMenuCrudCompetencias);
+            this.pnlMenuCompetencias.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlMenuCompetencias.Location = new System.Drawing.Point(0, 463);
+            this.pnlMenuCompetencias.Name = "pnlMenuCompetencias";
+            this.pnlMenuCompetencias.Size = new System.Drawing.Size(255, 128);
+            this.pnlMenuCompetencias.TabIndex = 7;
+            this.pnlMenuCompetencias.Visible = false;
+            // 
+            // btnResultados
+            // 
+            this.btnResultados.BackColor = System.Drawing.Color.White;
+            this.btnResultados.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnResultados.FlatAppearance.BorderSize = 0;
+            this.btnResultados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResultados.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResultados.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnResultados.Location = new System.Drawing.Point(0, 80);
+            this.btnResultados.Name = "btnResultados";
+            this.btnResultados.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnResultados.Size = new System.Drawing.Size(255, 40);
+            this.btnResultados.TabIndex = 5;
+            this.btnResultados.Text = "Resultados";
+            this.btnResultados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnResultados.UseVisualStyleBackColor = false;
+            this.btnResultados.Click += new System.EventHandler(this.btnResultados_Click);
+            // 
+            // btnCronometraje
+            // 
+            this.btnCronometraje.BackColor = System.Drawing.Color.White;
+            this.btnCronometraje.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCronometraje.FlatAppearance.BorderSize = 0;
+            this.btnCronometraje.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCronometraje.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCronometraje.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnCronometraje.Location = new System.Drawing.Point(0, 40);
+            this.btnCronometraje.Name = "btnCronometraje";
+            this.btnCronometraje.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnCronometraje.Size = new System.Drawing.Size(255, 40);
+            this.btnCronometraje.TabIndex = 4;
+            this.btnCronometraje.Text = "Cronometraje";
+            this.btnCronometraje.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCronometraje.UseVisualStyleBackColor = false;
+            this.btnCronometraje.Click += new System.EventHandler(this.btnCronometraje_Click);
+            // 
+            // btnMenuCrudCompetencias
+            // 
+            this.btnMenuCrudCompetencias.BackColor = System.Drawing.Color.White;
+            this.btnMenuCrudCompetencias.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMenuCrudCompetencias.FlatAppearance.BorderSize = 0;
+            this.btnMenuCrudCompetencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuCrudCompetencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuCrudCompetencias.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnMenuCrudCompetencias.Location = new System.Drawing.Point(0, 0);
+            this.btnMenuCrudCompetencias.Name = "btnMenuCrudCompetencias";
+            this.btnMenuCrudCompetencias.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnMenuCrudCompetencias.Size = new System.Drawing.Size(255, 40);
+            this.btnMenuCrudCompetencias.TabIndex = 3;
+            this.btnMenuCrudCompetencias.Text = "Adminstracion De Competencias";
+            this.btnMenuCrudCompetencias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMenuCrudCompetencias.UseVisualStyleBackColor = false;
+            this.btnMenuCrudCompetencias.Click += new System.EventHandler(this.btnMenuCrudCompetencias_Click);
             // 
             // btnMenuCompetencias
             // 
@@ -284,6 +356,7 @@
             this.Name = "Form_Principal";
             this.Text = "Form_Principal";
             this.panel2.ResumeLayout(false);
+            this.pnlMenuCompetencias.ResumeLayout(false);
             this.pnlSubmenuAdministracion.ResumeLayout(false);
             this.pnlSubmenuSistema.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -309,6 +382,10 @@
         private System.Windows.Forms.Button btnMenuParticipantes;
         private System.Windows.Forms.Button btnMenuCompetencias;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel pnlMenuCompetencias;
+        private System.Windows.Forms.Button btnResultados;
+        private System.Windows.Forms.Button btnCronometraje;
+        private System.Windows.Forms.Button btnMenuCrudCompetencias;
 
 
     }

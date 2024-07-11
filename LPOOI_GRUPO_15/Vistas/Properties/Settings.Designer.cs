@@ -26,8 +26,8 @@ namespace Vistas.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\comdep.mdf;Integrated S" +
-            "ecurity=True;Connect Timeout=30;User Instance=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=D:\\Repositorios\\Prueba1\\LPOOI_GRUPO_15\\" +
+            "comdep.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True")]
         public string comdepConnectionString {
             get {
                 return ((string)(this["comdepConnectionString"]));

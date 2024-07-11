@@ -49,6 +49,9 @@
             this.pnlBottomCompetencias = new System.Windows.Forms.Panel();
             this.grbxCompetenciaDatos = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dttpHoraFin = new System.Windows.Forms.DateTimePicker();
+            this.lblFechaFin = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dttpHoraInicio = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,9 +66,6 @@
             this.grbxCompetencias = new System.Windows.Forms.GroupBox();
             this.dtgwCompetencias = new System.Windows.Forms.DataGridView();
             this.errCompetencias = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lblFechaFin = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dttpHoraFin = new System.Windows.Forms.DateTimePicker();
             this.grbxCompetenciaDatos.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -316,6 +316,41 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Fecha/Hora De Finalizacion";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(11, 49);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 15);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Fecha";
+            // 
+            // dttpHoraFin
+            // 
+            this.dttpHoraFin.CustomFormat = "HH:mm";
+            this.dttpHoraFin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dttpHoraFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dttpHoraFin.Location = new System.Drawing.Point(94, 43);
+            this.dttpHoraFin.MinDate = new System.DateTime(2024, 6, 23, 0, 0, 0, 0);
+            this.dttpHoraFin.Name = "dttpHoraFin";
+            this.dttpHoraFin.ShowUpDown = true;
+            this.dttpHoraFin.Size = new System.Drawing.Size(135, 23);
+            this.dttpHoraFin.TabIndex = 21;
+            this.dttpHoraFin.Value = new System.DateTime(2024, 6, 23, 0, 0, 0, 0);
+            // 
+            // lblFechaFin
+            // 
+            this.lblFechaFin.AutoSize = true;
+            this.lblFechaFin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaFin.ForeColor = System.Drawing.Color.Black;
+            this.lblFechaFin.Location = new System.Drawing.Point(11, 25);
+            this.lblFechaFin.Name = "lblFechaFin";
+            this.lblFechaFin.Size = new System.Drawing.Size(38, 15);
+            this.lblFechaFin.TabIndex = 6;
+            this.lblFechaFin.Text = "Fecha";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dttpHoraInicio);
@@ -368,7 +403,8 @@
             // 
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Items.AddRange(new object[] {
-            "programado,",
+            "Seleccione un estado",
+            "programado",
             "postergado",
             "reprogramado",
             "cancelado"});
@@ -376,6 +412,7 @@
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(208, 21);
             this.cmbEstado.TabIndex = 26;
+            this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
             // 
             // lblEstado
             // 
@@ -465,41 +502,6 @@
             // errCompetencias
             // 
             this.errCompetencias.ContainerControl = this;
-            // 
-            // lblFechaFin
-            // 
-            this.lblFechaFin.AutoSize = true;
-            this.lblFechaFin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaFin.ForeColor = System.Drawing.Color.Black;
-            this.lblFechaFin.Location = new System.Drawing.Point(11, 25);
-            this.lblFechaFin.Name = "lblFechaFin";
-            this.lblFechaFin.Size = new System.Drawing.Size(38, 15);
-            this.lblFechaFin.TabIndex = 6;
-            this.lblFechaFin.Text = "Fecha";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(11, 49);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 15);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "Fecha";
-            // 
-            // dttpHoraFin
-            // 
-            this.dttpHoraFin.CustomFormat = "HH:mm";
-            this.dttpHoraFin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dttpHoraFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dttpHoraFin.Location = new System.Drawing.Point(94, 43);
-            this.dttpHoraFin.MinDate = new System.DateTime(2024, 6, 23, 0, 0, 0, 0);
-            this.dttpHoraFin.Name = "dttpHoraFin";
-            this.dttpHoraFin.ShowUpDown = true;
-            this.dttpHoraFin.Size = new System.Drawing.Size(135, 23);
-            this.dttpHoraFin.TabIndex = 21;
-            this.dttpHoraFin.Value = new System.DateTime(2024, 6, 23, 0, 0, 0, 0);
             // 
             // Form_AltaCompetencias
             // 

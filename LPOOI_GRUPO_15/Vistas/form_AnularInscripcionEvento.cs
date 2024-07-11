@@ -28,7 +28,7 @@ namespace Vistas
                 this.Dispose();
             }
         }
-        private DataTable lista_Eventos_Dni(int dni)
+        public static DataTable lista_Eventos_Dni(int dni)
         {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
 
@@ -50,7 +50,7 @@ namespace Vistas
         }
 
 
-        private void modificar_evento(int eveId, string estado) 
+        public static void modificar_evento(int eveId, string estado) 
         {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
             SqlCommand cmd = new SqlCommand();
@@ -76,22 +76,51 @@ namespace Vistas
 
         private void btnConsulta_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtDni.Text))
+            {
+                errorProviderAnulaciones.SetError(txtDni, "Este campo no puede estar vacio");
+                return;
+            }
             int dni = int.Parse(txtDni.Text);
             dtgvEventos.DataSource = lista_Eventos_Dni(dni);
+            lblInfo.Text = ParticipanteCtrl.obtenerNombreCompleto(dni);
         }
 
         private void btnAnular_Click(object sender, EventArgs e)
         {
             if (dtgvEventos.CurrentRow != null) 
             {
-                int eveId = int.Parse(dtgvEventos.CurrentRow.Cells["Eve_ID"].Value.ToString());
-                string estado = "anulado";
-                modificar_evento(eveId,estado);
-                int dni = int.Parse(txtDni.Text);
-                dtgvEventos.DataSource = lista_Eventos_Dni(dni);
-
+                string competencia = dtgvEventos.CurrentRow.Cells["Com_Nombre"].Value.ToString();
+                DialogResult resultado = MessageBox.Show("Deseas anular la Inscripcion del participante " + lblInfo.Text + " En la competencia " + competencia + "?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (resultado == DialogResult.Yes) 
+                {
+                    int eveId = int.Parse(dtgvEventos.CurrentRow.Cells["Eve_ID"].Value.ToString());
+                    string estado = "Anulado";
+                    modificar_evento(eveId, estado);
+                    int dni = int.Parse(txtDni.Text);
+                    dtgvEventos.DataSource = lista_Eventos_Dni(dni);
+                    btnAnular.Visible = false;
+                }               
             }
         }
+
+        private void dtgvEventos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnAnular.Visible = true;
+        }
+
+        private void txtDni_TextChanged(object sender, EventArgs e)
+        {
+            lblInfo.Text = "";
+            errorProviderAnulaciones.SetError(txtDni,"");
+        }
+
+        private void txtDni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validaciones.soloNumeros(e);
+        }
+
+
 
     }
 }

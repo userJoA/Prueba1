@@ -223,13 +223,13 @@ namespace ClasesBase
             cmd.Parameters.Add(param);
 
 
-            param = new SqlParameter("@nombre", SqlDbType.VarChar,30);
+            param = new SqlParameter("@nombre", SqlDbType.VarChar,50);
             param.Direction = ParameterDirection.Output;
             param.Value ="";
             cmd.Parameters.Add(param);
 
 
-            param = new SqlParameter("@apellido", SqlDbType.VarChar,30);
+            param = new SqlParameter("@apellido", SqlDbType.VarChar,50);
             param.Direction = ParameterDirection.Output;
             param.Value = "";
             cmd.Parameters.Add(param);
@@ -243,6 +243,34 @@ namespace ClasesBase
 
             return string.Format("{0} {1} ({2})", nombre, apellido, dni);
                   
+        }
+
+        public static bool verificar_dni(int dni) 
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
+
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "Consulta_Atleta_DNI_Verificacion";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            SqlParameter param = new SqlParameter("@dni",SqlDbType.Int);
+            param.Direction = ParameterDirection.Input;
+            param.Value = dni;
+            cmd.Parameters.Add(param);
+
+            param = new SqlParameter("@existe",SqlDbType.Bit);
+            param.Direction = ParameterDirection.Output;
+            cmd.Parameters.Add(param);
+
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+
+            bool existe = Convert.ToBoolean(cmd.Parameters["@existe"].Value);
+            return existe;
+            
         }
     }
 }

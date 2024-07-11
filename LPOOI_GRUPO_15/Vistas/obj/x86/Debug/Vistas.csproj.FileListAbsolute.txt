@@ -53,3 +53,7 @@ D:\Repositorios\Prueba1\LPOOI_GRUPO_15\Vistas\obj\x86\Debug\Vistas.Properties.Re
 D:\Repositorios\Prueba1\LPOOI_GRUPO_15\Vistas\obj\x86\Debug\Vistas.csproj.GenerateResource.Cache
 D:\Repositorios\Prueba1\LPOOI_GRUPO_15\Vistas\obj\x86\Debug\Vistas.exe
 D:\Repositorios\Prueba1\LPOOI_GRUPO_15\Vistas\obj\x86\Debug\Vistas.pdb
+D:\Repositorios\Prueba1\LPOOI_GRUPO_15\Vistas\obj\x86\Debug\Vistas.form_AcreditacionEvento.resources
+D:\Repositorios\Prueba1\LPOOI_GRUPO_15\Vistas\obj\x86\Debug\Vistas.Form_Cronometraje.resources
+D:\Repositorios\Prueba1\LPOOI_GRUPO_15\Vistas\obj\x86\Debug\Vistas.form_actualizarFechas.resources
+D:\Repositorios\Prueba1\LPOOI_GRUPO_15\Vistas\obj\x86\Debug\Vistas.Form_Resultados.resources

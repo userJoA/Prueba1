@@ -19,6 +19,7 @@ namespace Vistas
             InitializeComponent();
             cargar_competencias();
             cargar_categorias_disciplinas();
+            cmbEstado.SelectedIndex = 0;
         }
 
         
@@ -41,7 +42,7 @@ namespace Vistas
             txtUbicacion.Clear();
             txtOrganizador.Clear();
             txtSponsors.Clear();
-            cmbEstado.SelectedIndex = -1;
+            cmbEstado.SelectedIndex = 0;
             dttmFechaInicio.Value = DateTime.Now;
             dttmFechaFin.Value = DateTime.Now;
             dttpHoraFin.Value = DateTime.Now;
@@ -352,6 +353,33 @@ namespace Vistas
 
         }
 
+        public static bool comprobarCompetenciaCancelada(string nCompetencia) 
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
+
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "Consulta_Competencia_Estado";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            SqlParameter param = new SqlParameter("@competencia", SqlDbType.VarChar);
+            param.Direction = ParameterDirection.Input;
+            param.Value = nCompetencia;
+            cmd.Parameters.Add(param);
+
+            param = new SqlParameter("@existe", SqlDbType.Bit);
+            param.Direction = ParameterDirection.Output;
+            cmd.Parameters.Add(param);
+
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+
+            bool existe = Convert.ToBoolean(cmd.Parameters["@existe"].Value);
+            return existe;
+        }
+
         public static bool comprobar_FInicial(int comId, DateTime fecha) 
         {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
@@ -427,6 +455,12 @@ namespace Vistas
 
             }
         }
+
+        private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }

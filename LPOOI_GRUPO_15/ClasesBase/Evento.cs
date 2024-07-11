@@ -49,5 +49,6 @@ namespace ClasesBase
             get { return eve_HoraFin; }
             set { eve_HoraFin = value; }
         }
+
     }
 }

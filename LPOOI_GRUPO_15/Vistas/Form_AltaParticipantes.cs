@@ -141,6 +141,12 @@ namespace Vistas
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (ParticipanteCtrl.verificar_dni(int.Parse(txtDNI.Text))) 
+            {
+                errFormAltaParticipante.SetError(txtDNI,"DNI ya registrado");
+                return;
+            }
+
             borrarMsjError();
             if (txtID.Text == "")
             {

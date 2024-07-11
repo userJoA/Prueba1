@@ -15,5 +15,10 @@ namespace Vistas
         {
             InitializeComponent();
         }
+
+        private void Form_Acreditaciones_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

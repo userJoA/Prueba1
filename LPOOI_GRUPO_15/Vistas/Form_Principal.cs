@@ -61,7 +61,7 @@ namespace Vistas
         {
             if (submenu.Visible == false)
             {
-                ocultarSubmenu();
+                //ocultarSubmenu();
                 submenu.Visible = true;
             }
             else 
@@ -85,37 +85,52 @@ namespace Vistas
         private void btnSubmenuSistemaUsuario_Click(object sender, EventArgs e)
         {
             cargarFormulario(new Form_Usuarios());
-            ocultarSubmenu();
+            //ocultarSubmenu();
         }
 
         private void btnSubmenuEventos_Click(object sender, EventArgs e)
         {
             cargarFormulario(new Form_AltaEventos());
-            ocultarSubmenu();
+            //ocultarSubmenu();
         }
 
         private void btnSubmenuDisciplinas_Click(object sender, EventArgs e)
         {
             cargarFormulario(new Form_AltaDisciplinas());
-            ocultarSubmenu();
+            //ocultarSubmenu();
         }
 
         private void btnSubmenuCategorias_Click(object sender, EventArgs e)
         {
             cargarFormulario(new Form_AltaCategorias());
-            ocultarSubmenu();
+            //ocultarSubmenu();
         }
 
         private void btnMenuCompetencias_Click(object sender, EventArgs e)
         {
-            cargarFormulario(new Form_AltaCompetencias());
-            ocultarSubmenu();
+            mostrarSubmenu(pnlMenuCompetencias);
         }
 
         private void btnMenuParticipantes_Click(object sender, EventArgs e)
         {
             cargarFormulario(new Form_AltaParticipantes());
-            ocultarSubmenu();
+            //ocultarSubmenu();
+        }
+
+        private void btnMenuCrudCompetencias_Click(object sender, EventArgs e)
+        {
+            cargarFormulario(new Form_AltaCompetencias());
+            //ocultarSubmenu();
+        }
+
+        private void btnCronometraje_Click(object sender, EventArgs e)
+        {
+            cargarFormulario(new Form_Cronometraje());
+        }
+
+        private void btnResultados_Click(object sender, EventArgs e)
+        {
+            cargarFormulario(new Form_Resultados());
         }
 
     }
